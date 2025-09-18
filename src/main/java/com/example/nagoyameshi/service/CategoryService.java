@@ -1,5 +1,6 @@
 package com.example.nagoyameshi.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
@@ -67,5 +68,10 @@ public class CategoryService {
 	@Transactional
 	public void deleteCategory(Category category) {
 		categoryRepository.delete(category);
+	}
+	
+	// すべてのカテゴリをリスト形式で取得する。
+	public List<Category> findAllCategories() {
+		return categoryRepository.findAll();
 	}
 }
