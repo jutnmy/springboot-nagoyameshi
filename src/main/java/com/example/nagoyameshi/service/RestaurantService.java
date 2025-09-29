@@ -171,4 +171,9 @@ public class RestaurantService {
 			return false;
 		}
 	}
+	
+	// すべての店舗を作成日時が新しい順に並べ替え、ページングされた状態で取得する。
+	public Page<Restaurant> findAllRestaurantsByOrderByCreatedAtDesc(Pageable pageable) {
+		return restaurantRepository.findAllByOrderByCreatedAtDesc(pageable);
+	}
 }
